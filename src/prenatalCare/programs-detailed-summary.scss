@@ -1,0 +1,17 @@
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
+.widgetCard {
+  border: 1px solid $ui-03;
+  border-bottom: none;
+}
+
+
+.additionalInfo {
+  background-color: #f9f9f9;
+  padding: 16px; 
+  border-radius: 8px; 
+}
+
+.spacing {
+  margin-bottom: 24px; 
+}
