@@ -68,5 +68,3 @@ export const ObtetriciaDashboardLink =
 
 export const antenatalDetailedSummary = getSyncLifecycle(AntenatalDetailedSummary, options1);
 
-
-//export const antenatalBox = getAsyncLifecycle(() => import('./prenatalCare/antenatal.component'), options);
