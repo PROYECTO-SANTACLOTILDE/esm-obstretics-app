@@ -21,6 +21,11 @@
       "slot": "Boxes"
     },
     {
+      "name": "calendar-component",
+      "component": "calendarComponent",
+      "slot": "patient-chart-summary-dashboard-slot"
+    },  
+    {
       "name": "obstetricia-Test-summary-dashboard",
       "slot": "patient-chart-dashboard-slot",
       "component": "ObtetriciaDashboardLink",
@@ -40,8 +45,8 @@
   ],
   "pages": [
     {
-      "component": "root", 
-      "route": "rutaDePrueba" 
+      "component": "root",
+      "route": "rutaDePrueba"
     },
     {
       "component": "obstetrics",

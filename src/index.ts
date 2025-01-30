@@ -47,7 +47,7 @@ export function startupApp() {
  * `/openmrs/spa/root`.
  */
 export const root = getAsyncLifecycle(() => import('./pruebas.component'), options);
-export const obstetrics = getAsyncLifecycle(() => import('./obstetricsTest.component'), options)
+export const obstetrics = getAsyncLifecycle(() => import('./obstetricsTest.component'), options);
 
 /**
  * The following are named exports for the extensions defined in this frontend modules. See the `routes.json` file to see how these are used.
@@ -60,11 +60,14 @@ export const brandBox = getAsyncLifecycle(() => import('./boxes/extensions/brand
 
 export const obstetricsWidgetDbLink = getSyncLifecycle(createHomeDashboardLink(dashboardMetaHome), options);
 
-export const ObtetriciaDashboardLink =
-  getSyncLifecycle(
-    createDashboardLink({...dashboardMetaPatient, moduleName,}),
-    options1,
-  );
+export const ObtetriciaDashboardLink = getSyncLifecycle(
+  createDashboardLink({ ...dashboardMetaPatient, moduleName }),
+  options1,
+);
 
 export const antenatalDetailedSummary = getSyncLifecycle(AntenatalDetailedSummary, options1);
 
+export const calendarComponent = getAsyncLifecycle(
+  () => import('./calendar/appointments-calendar-view.component'),
+  options,
+);

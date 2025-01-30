@@ -41,3 +41,22 @@ export type Config = {
   casualGreeting: boolean;
   whoToGreet: Array<string>;
 };
+
+export interface ConfigObject {
+  allowAllDayAppointments: boolean;
+  appointmentStatuses: Array<string>;
+  appointmentTypes: Array<string>;
+  checkInButton: {
+    enabled: boolean;
+    showIfActiveVisit: boolean;
+    customUrl: string;
+  };
+  checkOutButton: {
+    enabled: boolean;
+    customUrl: string;
+  };
+  customPatientChartUrl: string;
+  includePhoneNumberInExcelSpreadsheet: boolean;
+  patientIdentifierType: string;
+  showUnscheduledAppointmentsTab: boolean;
+}
