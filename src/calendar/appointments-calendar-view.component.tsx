@@ -12,9 +12,10 @@ import SelectedDateContext from '../hooks/selectedDateContext';
 const AppointmentsCalendarView: React.FC = () => {
   const { t } = useTranslation();
   const [selectedDate, setSelectedDate] = useState(dayjs().startOf('day').format(omrsDateFormat));
-  const { calendarEvents } = useAppointmentsCalendar(dayjs(selectedDate).toISOString(), 'monthly');
+  const { calendarEvents } = useAppointmentsCalendar(dayjs(selectedDate).toISOString(), 'monthly', '1663c2c7-ea26-4fcc-af98-bdb34195c493');
 
   let params = useParams();
+
 
   useEffect(() => {
     if (params.date) {

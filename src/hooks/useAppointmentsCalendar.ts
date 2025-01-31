@@ -16,10 +16,12 @@ interface AppointmentSummaryResponse {
   appointmentCountMap: Map<string, AppointmentCountMapEntry>;
 }
 
-export const useAppointmentsCalendar = (forDate: string, period: string) => {
+export const useAppointmentsCalendar = (forDate: string, period: string, patientUuid?: string) => {
   const { startDate, endDate } = evaluateAppointmentCalendarDates(forDate, period);
-  const url = `${restBaseUrl}/appointment/appointmentSummary?startDate=${startDate}&endDate=${endDate}`;
-
+  let url = `${restBaseUrl}/appointment/appointmentSummary?startDate=${startDate}&endDate=${endDate}`;
+  if (patientUuid) {
+    url += `&patientUuid=${patientUuid}`;
+  }
   const { data, error, isLoading } = useSWR<{ data: Array<AppointmentSummaryResponse> }>(
     startDate && endDate ? url : null,
     openmrsFetch,
