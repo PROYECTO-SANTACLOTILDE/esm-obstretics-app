@@ -9,6 +9,7 @@ import { type DailyAppointmentsCountByService } from '../../types';
 import SelectedDateContext from '../../hooks/selectedDateContext';
 import MonthlyWorkloadViewExpanded from './monthly-workload-view-expanded.component';
 import styles from './monthly-view-workload.scss';
+import { Button } from '@carbon/react';
 
 export interface MonthlyWorkloadViewProps {
   events: Array<DailyAppointmentsCountByService>;
@@ -76,6 +77,9 @@ const MonthlyWorkloadView: React.FC<MonthlyWorkloadViewProps> = ({ dateTime, eve
           </span>
           {currentData?.services && (
             <div className={styles.currentData}>
+              <Button>
+                Citas
+              </Button>
               {visibleServices.map(({ serviceName, serviceUuid, count }, i) => (
                 <div
                   key={`${serviceUuid}-${count}-${i}`}

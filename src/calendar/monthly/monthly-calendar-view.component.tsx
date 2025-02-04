@@ -21,6 +21,7 @@ const MonthlyCalendarView: React.FC<MonthlyCalendarViewProps> = ({ events }) => 
     <div className={styles.calendarViewContainer}>
       <MonthlyHeader />
       <div className={styles.wrapper}>
+        
         <div className={styles.monthlyCalendar}>
           {monthDays(dayjs(selectedDate)).map((dateTime, i) => (
             <MonthlyViewWorkload key={i} dateTime={dateTime} events={events} />
