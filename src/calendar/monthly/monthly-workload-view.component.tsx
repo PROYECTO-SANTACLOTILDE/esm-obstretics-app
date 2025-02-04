@@ -9,6 +9,7 @@ import { type DailyAppointmentsCountByService } from '../../types';
 import SelectedDateContext from '../../hooks/selectedDateContext';
 import MonthlyWorkloadViewExpanded from './monthly-workload-view-expanded.component';
 import styles from './monthly-view-workload.scss';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@carbon/react';
 
 export interface MonthlyWorkloadViewProps {
@@ -18,6 +19,7 @@ export interface MonthlyWorkloadViewProps {
 }
 
 const MonthlyWorkloadView: React.FC<MonthlyWorkloadViewProps> = ({ dateTime, events, showAllServices = false }) => {
+  const { t } = useTranslation();
   const layout = useLayoutType();
   const { selectedDate } = useContext(SelectedDateContext);
 
@@ -78,7 +80,7 @@ const MonthlyWorkloadView: React.FC<MonthlyWorkloadViewProps> = ({ dateTime, eve
           {currentData?.services && (
             <div className={styles.currentData}>
               <Button>
-                Citas
+                <span>{t('Prueba', 'Prueba')}</span>
               </Button>
               {visibleServices.map(({ serviceName, serviceUuid, count }, i) => (
                 <div
