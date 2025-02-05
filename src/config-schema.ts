@@ -35,9 +35,16 @@ export const configSchema = {
     },
     _validators: [validator((v) => v.length > 0, 'At least one person must be greeted.')],
   },
+  growthChartTimeUnit: {
+    _type: Type.String,
+    _default: 'months',
+    _description: 'Defines the time unit for the growth chart: months or years.',
+    _validators: [validator((v) => v === 'months' || v === 'years', 'The value must be either "months" or "years".')],
+  },
 };
 
 export type Config = {
   casualGreeting: boolean;
   whoToGreet: Array<string>;
+  growthChartTimeUnit: string;
 };

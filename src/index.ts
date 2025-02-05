@@ -6,10 +6,10 @@
  */
 import { getAsyncLifecycle, defineConfigSchema, getSyncLifecycle } from '@openmrs/esm-framework';
 import { configSchema } from './config-schema';
-import { createHomeDashboardLink } from './createDashboardLink.component';
-import { dashboardMetaHome, dashboardMetaPatient } from './dashboardMeta';
+import {  dashboardMetaObstetrics } from './dashboardMeta';
 import { createDashboardLink } from '@openmrs/esm-patient-common-lib';
-import AntenatalDetailedSummary from './prenatalCare/prenatalCareChart.component';
+//import AntenatalDetailedSummary from './prenatalCare/prenatalCareChart.component';
+import AntenatalProgramSummary from './antenatal-program-summary/antenatal-program-summary.component';
 
 const moduleName = '@openmrs/esm-template-app';
 
@@ -19,9 +19,10 @@ const options = {
 };
 
 const options1 = {
-  featureName: 'patient-programs',
+  featureName: 'obstetrics-programs',
   moduleName,
 };
+
 
 /**
  * This tells the app shell how to obtain translation files: that they
@@ -46,25 +47,19 @@ export function startupApp() {
  * will be `openmrsSpaBase() + 'root'`, which is usually
  * `/openmrs/spa/root`.
  */
-export const root = getAsyncLifecycle(() => import('./pruebas.component'), options);
-export const obstetrics = getAsyncLifecycle(() => import('./obstetricsTest.component'), options)
 
-/**
- * The following are named exports for the extensions defined in this frontend modules. See the `routes.json` file to see how these are used.
- */
-export const redBox = getAsyncLifecycle(() => import('./boxes/extensions/red-box.component'), options);
 
-export const blueBox = getAsyncLifecycle(() => import('./boxes/extensions/blue-box.component'), options);
-
-export const brandBox = getAsyncLifecycle(() => import('./boxes/extensions/brand-box.component'), options);
-
-export const obstetricsWidgetDbLink = getSyncLifecycle(createHomeDashboardLink(dashboardMetaHome), options);
-
-export const ObtetriciaDashboardLink =
+export const ObstetricsDashboardLink =
   getSyncLifecycle(
-    createDashboardLink({...dashboardMetaPatient, moduleName,}),
+    createDashboardLink({...dashboardMetaObstetrics, moduleName,}),
     options1,
   );
 
-export const antenatalDetailedSummary = getSyncLifecycle(AntenatalDetailedSummary, options1);
+  /*export const appointmentsCalendarDashboardLink = getSyncLifecycle(
+    createDashboardLink({...appointmentCalendarDashboardMeta, moduleName,}),
+    options,
+  );*/
 
+//export const antenatalDetailedSummary = getSyncLifecycle(AntenatalDetailedSummary, options1);
+
+export const antenatalProgram = getSyncLifecycle(AntenatalProgramSummary, options);

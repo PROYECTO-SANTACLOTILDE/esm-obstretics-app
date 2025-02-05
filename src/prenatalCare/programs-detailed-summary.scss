@@ -3,13 +3,21 @@
 .widgetCard {
   border: 1px solid $ui-03;
   border-bottom: none;
+  width: 100%;
+  max-width: 100%;
 }
 
+.widgetCard table {
+  width: 100%;
+  table-layout: auto; 
+}
 
 .additionalInfo {
   background-color: #f9f9f9;
   padding: 16px; 
   border-radius: 8px; 
+  width: 100%;
+  max-width: 100%;
 }
 
 .spacing {

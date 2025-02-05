@@ -1,12 +1,7 @@
-export const dashboardMetaHome = {
-    name: 'obstetricia',
-    slot: 'home-dashboard-slot',
-    title: 'obstetricia',
-  };
 
-export const dashboardMetaPatient = {
+export const dashboardMetaObstetrics = {
     nombre: "Obstetricia",
-    slot: 'patient-chart-obstetric-dashboard-slot',
+    slot: 'patient-antenatal-care-dashboard-slot',
     path: 'obstetricia',
     title: 'Obstetricia',
   };
